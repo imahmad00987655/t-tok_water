@@ -1,10 +1,17 @@
 import http from "node:http";
+import { existsSync } from "node:fs";
 import { Readable } from "node:stream";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 
-const { default: app } = await import("./dist/server/index.js");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const serverEntryPath = join(__dirname, "dist", "server", "index.js");
+const hasBuild = existsSync(serverEntryPath);
 
-if (!app?.fetch || typeof app.fetch !== "function") {
-  throw new Error("SSR handler not found. Run `npm run build` before `npm start`.");
+let app = null;
+if (hasBuild) {
+  const mod = await import("./dist/server/index.js");
+  app = mod.default;
 }
 
 const port = Number(process.env.PORT || 3000);
@@ -12,6 +19,13 @@ const host = process.env.HOST || "0.0.0.0";
 
 const server = http.createServer(async (req, res) => {
   try {
+    if (!hasBuild || !app?.fetch || typeof app.fetch !== "function") {
+      res.statusCode = 503;
+      res.setHeader("content-type", "text/plain; charset=utf-8");
+      res.end("Build files missing. Run `npm run build` then restart the app.");
+      return;
+    }
+
     const protocol =
       (req.headers["x-forwarded-proto"] || "").toString().split(",")[0].trim() || "http";
     const hostHeader = req.headers.host || `localhost:${port}`;
@@ -58,4 +72,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(port, host, () => {
   console.log(`SSR server listening on http://${host}:${port}`);
+  if (!hasBuild) {
+    console.warn("Build not found at dist/server/index.js. Run `npm run build` and restart.");
+  }
 });
