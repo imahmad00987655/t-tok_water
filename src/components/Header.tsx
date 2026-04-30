@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Droplets } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
@@ -21,6 +21,12 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const navClass = ({ isActive }: { isActive: boolean }) =>
+    cn(
+      "px-4 py-2 text-sm font-medium rounded-md transition-colors hover:text-foreground hover:bg-secondary",
+      isActive ? "text-primary bg-secondary" : "text-foreground/85",
+    );
 
   return (
     <header
@@ -44,14 +50,14 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-1">
           {NAV.map((item) => (
-            <Link
+            <NavLink
               key={item.to}
               to={item.to}
-              activeOptions={{ exact: item.to === "/" }}
-              className="px-4 py-2 text-sm font-medium text-foreground/85 rounded-md transition-colors hover:text-foreground hover:bg-secondary data-[status=active]:text-primary data-[status=active]:bg-secondary"
+              end={item.to === "/"}
+              className={navClass}
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
           <Link
             to="/contact"
@@ -74,15 +80,20 @@ export function Header() {
         <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-lg animate-fade-in">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
             {NAV.map((item) => (
-              <Link
+              <NavLink
                 key={item.to}
                 to={item.to}
-                activeOptions={{ exact: item.to === "/" }}
+                end={item.to === "/"}
                 onClick={() => setOpen(false)}
-                className="px-4 py-3 rounded-md text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-primary"
+                className={({ isActive }) =>
+                  cn(
+                    "px-4 py-3 rounded-md text-base font-medium hover:bg-secondary hover:text-foreground",
+                    isActive ? "bg-secondary text-primary" : "text-muted-foreground",
+                  )
+                }
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>
