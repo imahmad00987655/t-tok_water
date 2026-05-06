@@ -59,8 +59,14 @@ export function ContactPage() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Find us</h2>
           <p className="mt-2 text-muted-foreground">{SITE.address}</p>
           <div className="mt-6 aspect-16/7 w-full overflow-hidden rounded-3xl border border-border shadow-card">
-            <iframe title="Map" src="https://www.google.com/maps?q=Sabzazar%2C%20Lahore%2C%20Pakistan&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full w-full" />
-          </div>
+  <iframe
+    title="Map"
+    src="https://www.google.com/maps?q=41%20K%2C%20Block%20K%2C%20Near%20Kashmir%20Bakery%2C%20Sabzazar%2C%20Lahore%2C%20Pakistan&output=embed"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="h-full w-full"
+  />
+</div>
         </div>
       </section>
     </div>

@@ -14,7 +14,7 @@ export const SITE = {
   phone2: "0307 3644477",
   whatsappNumber: "923262110909", // digits only for wa.me
   email: "support@t-tok.com",
-  address: "Sabzazar, Lahore, Pakistan",
+  address: "41 K, Block K, Near Kashmir Bakery, Sabzazar, Lahore, Pakistan"
 };
 
 export const waLink = (text: string) =>
