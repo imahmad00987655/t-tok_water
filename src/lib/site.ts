@@ -1,10 +1,10 @@
-import product500ml from "../assets/WhatsApp Image 2026-05-04 at 7.52.09 PM.jpeg";
-import product15l from "../assets/WhatsApp Image 2026-05-04 at 7.52.10 PM.jpeg";
-import product5l from "../assets/WhatsApp Image 2026-05-04 at 7.52.10 PM (1).jpeg";
-import product5lCooler from "../assets/WhatsApp Image 2026-05-05 at 3.32.23 PM.jpeg";
-import product8l from "../assets/WhatsApp Image 2026-05-05 at 3.32.23 PM (1).jpeg";
-import product19l from "../assets/WhatsApp Image 2026-05-05 at 3.32.24 PM.jpeg";
-import productHolography from "../assets/WhatsApp Image 2026-05-05 at 3.32.24 PM (1).jpeg";
+import product500ml from "../assets/WhatsApp_Image_2026-05-04_at_7.52.09_PM-removebg-preview.png";
+import product15l from "../assets/WhatsApp_Image_2026-05-04_at_7.52.10_PM-removebg-preview.png";
+import product5l from "../assets/WhatsApp_Image_2026-05-04_at_7.52.10_PM__1_-removebg-preview.png";
+import product5lCooler from "../assets/WhatsApp_Image_2026-05-05_at_3.32.23_PM-removebg-preview.png";
+import product8l from "../assets/WhatsApp_Image_2026-05-05_at_3.32.23_PM__1_-removebg-preview.png";
+import product19l from "../assets/WhatsApp_Image_2026-05-05_at_3.32.24_PM-removebg-preview.png";
+import productHolography from "../assets/WhatsApp_Image_2026-05-05_at_3.32.24_PM__1_-removebg-preview.png";
 
 export const SITE = {
   name: "T-Tok Water Filtration",

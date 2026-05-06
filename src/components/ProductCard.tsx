@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
       )}
       <div
-        className={`relative aspect-4/3 w-full overflow-hidden ${
+        className={`relative h-52 w-full overflow-hidden ${
           isSpecialty
             ? "bg-linear-to-br from-[oklch(0.92_0.06_300)] via-[oklch(0.88_0.08_250)] to-[oklch(0.85_0.1_220)]"
             : "bg-linear-to-br from-[oklch(0.97_0.02_235)] to-[oklch(0.88_0.08_240)]"
