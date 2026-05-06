@@ -13,7 +13,7 @@ export const SITE = {
   phone: "0326 2110909",
   phone2: "0307 3644477",
   whatsappNumber: "923262110909", // digits only for wa.me
-  email: "hello@t-tok.water",
+  email: "support@t-tok.com",
   address: "Sabzazar, Lahore, Pakistan",
 };
 
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
     size: "5 L",
     description: "A reliable household choice for everyday drinking water.",
     category: "water",
-    image: product5l,
+    image: product19l,
   },
   {
     slug: "5-liter-cooler",
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     description: "The classic office and home dispenser gallon.",
     category: "water",
     badge: "Best Seller",
-    image: product19l,
+    image: product5l,
   },
   {
     slug: "holography",
@@ -87,6 +87,6 @@ export const PRODUCTS: Product[] = [
       "A premium decorative holography piece — a statement of brand craftsmanship. Not a water product.",
     category: "specialty",
     badge: "Specialty",
-    image: productHolography,
+
   },
 ];
