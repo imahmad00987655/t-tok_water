@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Droplets, Phone, Mail, MapPin } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { Droplets, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -33,9 +33,19 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-foreground">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> {SITE.phone}</li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> {SITE.phone2}</li>
             <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> {SITE.email}</li>
             <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> {SITE.address}</li>
           </ul>
+          <a
+            href={waLink(`Hi ${SITE.short}, I'd like to place an order.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-xs font-semibold text-white transition-transform hover:scale-[1.02]"
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp Us
+          </a>
         </div>
       </div>
       <div className="border-t border-border">
