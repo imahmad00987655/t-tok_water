@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     slug: "8-liter",
-    name: "8 Liter Bottle",
+    name: "8 Liter CoolerBottle",
     size: "8 L",
     description: "Family-sized bottle for kitchens and small offices.",
     category: "water",
