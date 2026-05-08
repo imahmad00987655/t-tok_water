@@ -37,7 +37,7 @@ export const PRODUCTS: Product[] = [
     size: "500 ml",
     description: "Perfect on-the-go hydration. Lightweight, sealed, and pure.",
     category: "water",
-    image: product500ml,
+    image: product19l,
   },
   {
     slug: "1-5-liter",
@@ -46,14 +46,6 @@ export const PRODUCTS: Product[] = [
     description: "Ideal for desks, lunchboxes, and short trips.",
     category: "water",
     image: product15l,
-  },
-  {
-    slug: "5-liter",
-    name: "5 Liter Bottle",
-    size: "5 L",
-    description: "A reliable household choice for everyday drinking water.",
-    category: "water",
-    image: product19l,
   },
   {
     slug: "5-liter-cooler",
